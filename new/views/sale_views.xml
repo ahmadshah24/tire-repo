@@ -11,7 +11,7 @@
           <field name="billNo"/>
           <field name="Cname"/>
           <field name="date"/>
-          <field name="total"/>
+          <field name="total" sum="a"/>
         </tree>
       </field>
     </record>
@@ -79,6 +79,29 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+
+  <record model="ir.actions.act_window" id="costumer_action_window">
+        <field name="name">Sobek Sales to Costumers</field>
+        <field name="res_model">costumer.costumer</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+
+
+      
+
+    <record model="ir.actions.act_window" id="crasidat_action_window">
+      <field name="name">Sobek Rasidat from costumers </field>
+      <field name="res_model">crasidat.crasidat</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="take_action_window">
+      <field name="name">Sobek Takes From Office</field>
+      <field name="res_model">take.take</field>
+      <field name="view_mode">tree,form</field>
+    </record>
     <!-- server action to the one above -->
 
      
@@ -92,7 +115,10 @@
 
     <menuitem name="Sale" id="new.menu_1" parent="new.menu_root" action="new_action_window"/>
     <menuitem name="Return" id="new.menu_2" parent="new.menu_root" action="return_action_window"/>
-	<menuitem name="Rasidat" id="new.menu_3" parent="new.menu_root" action="rasidat_action_window"/>
+	  <menuitem name="Rasidat" id="new.menu_3" parent="new.menu_root" action="rasidat_action_window"/>
+    <menuitem name="Costumer" id="new.menu_4" parent="new.menu_root" action="costumer_action_window"/>
+    <menuitem name="Costumer Rasidat" id="new.menu_5" parent="new.menu_root" action="crasidat_action_window"/>
+    <menuitem name="Takes" id="new.menu_6" parent="new.menu_root" action="take_action_window"/>
 
     <!-- actions -->
  

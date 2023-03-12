@@ -2,39 +2,33 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="rasidat_list">
-      <field name="name">rasidat.list</field>
-      <field name="model">rasidat.rasidat</field>
+    <record model="ir.ui.view" id="take_list">
+      <field name="name">take.list</field>
+      <field name="model">take.take</field>
       <field name="arch" type="xml">
         <tree>
           <field name="no"/>
-          <field name="Cname"/>
           <field name="date"/>
-          <field name="amount"/>
           <field name="check"/>
-          <field name="to"/>
+          <field name="amount" sum="a"/>
         </tree>
       </field>
     </record>
 
 <!-- form _________________________________ -->
 
-    <record model="ir.ui.view" id="rasidat_form">
-      <field name="name">rasidat.form</field>
-      <field name="model">rasidat.rasidat</field>
+    <record model="ir.ui.view" id="take_form">
+      <field name="name">take.form</field>
+      <field name="model">take.take</field>
       <field name="arch" type="xml">
         <form>
           <sheet>
             <group>
                 <group>
                     <field name="no"/>
-                    <field name="Cname"/>
                     <field name="date"/>
-                </group>
-                <group>
                     <field name="check"/>
                     <field name="amount"/>
-                    <field name="to"/>
                 </group>
             </group>
         </sheet>
@@ -45,9 +39,9 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="rasidat_action_window">
-      <field name="name">Sobek Rasidat TO Office</field>
-      <field name="res_model">rasidat.rasidat</field>
+    <record model="ir.actions.act_window" id="take_action_window">
+      <field name="name">Sobek Takes From Office</field>
+      <field name="res_model">take.take</field>
       <field name="view_mode">tree,form</field>
     </record>
 

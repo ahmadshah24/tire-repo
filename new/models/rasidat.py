@@ -8,6 +8,7 @@ class Rasidat(models.Model):
 
     no = fields.Char("NO ")
     Cname = fields.Char("Costumer Name")
+    check = fields.Char("Check No")
     date = fields.Date("Date")
     amount = fields.Integer("Amount")
     to = fields.Char("Reciver")

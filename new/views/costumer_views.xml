@@ -1,0 +1,61 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="costumer_list">
+      <field name="name">costumer.list</field>
+      <field name="model">costumer.costumer</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="no"/>
+          <field name="name"/>
+          <field name="billNo"/>
+          <field name="tireType"/>
+          <field name="tubeType"/>
+          <field name="amount"/>
+          <field name="cost"/>
+          <field name="total" sum="s"/>
+          <field name="reminder" sum="s"/>
+        </tree>
+      </field>
+    </record>
+ 
+<!-- form _________________________________ -->
+
+    <record model="ir.ui.view" id="costumer_form">
+      <field name="name">costumer.form</field>
+      <field name="model">costumer.costumer</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+                <group>
+                    <field name="no"/>
+                    <field name="name"/>
+                    <field name="billNo"/>
+                    <field name="tireType"/>
+                    <field name="tubeType"/>
+                </group>
+                <group>
+                    <field name="amount"/>
+                    <field name="cost"/>
+                    <field name="total"/>
+                    <field name="reminder"/>
+                </group>
+            </group>
+        </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="costumer_action_window">
+      <field name="name">Sobek Rasidat From Costumers</field>
+      <field name="res_model">costumer.costumer</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>

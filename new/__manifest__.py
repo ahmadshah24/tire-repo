@@ -29,6 +29,10 @@
         'views/templates.xml',
         'views/return_views.xml',
         'views/rasidat_views.xml',
+        'views/costumer_views.xml',
+        'views/costumer_rasidat_views.xml',
+        'views/take_views.xml',
+        
     ],
     # only loaded in demonstration mode
     'demo': [
