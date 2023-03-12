@@ -1,0 +1,69 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="return_list">
+      <field name="name">return.list</field>
+      <field name="model">return.return</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="no"/>
+          <field name="billNo"/>
+          <field name="Cname"/>
+          <field name="date"/>
+          <field name="total"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- form _________________________________ -->
+
+    <record model="ir.ui.view" id="return_form">
+      <field name="name">return.form</field>
+      <field name="model">return.return</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+                <group>
+                    <field name="no"/>
+                    <field name="billNo"/>
+                    <field name="Cname"/>
+                </group>
+                <group>
+                    <field name="date"/>
+                    <field name="total"/>
+                </group>
+            </group>
+        </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="return_action_window">
+      <field name="name">Sobek</field>
+      <field name="res_model">return.return</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+     
+
+
+    <!-- Top menu item -->
+
+    <!-- <menuitem name="Sobek Tire" id="new.menu_root"/> -->
+
+    <!-- menu categories -->
+
+    <!-- <menuitem name="Sale" id="new.menu_2" parent="new.menu_root" action="new.action_window"/> -->
+
+    <!-- actions -->
+ 
+  </data>
+</odoo>

@@ -1,0 +1,100 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="new_list">
+      <field name="name">new.list</field>
+      <field name="model">new.new</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="no"/>
+          <field name="billNo"/>
+          <field name="Cname"/>
+          <field name="date"/>
+          <field name="total"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- form _________________________________ -->
+
+    <record model="ir.ui.view" id="new_form">
+      <field name="name">new.form</field>
+      <field name="model">new.new</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+                <group>
+                    <field name="no"/>
+                    <field name="billNo"/>
+                    <field name="Cname"/>
+                </group>
+                <group>
+                    <field name="date"/>
+                    <field name="total"/>
+                </group>
+            </group>
+            <notebook>
+              <page string="Return Information">
+				<group>
+						<field name="return_id">
+					 	<tree editable="top">
+							<field name="no"/>
+							<field name="billNo"/>
+							<field name="Cname"/>
+							<field name="date"/>
+							<field name="total"/>
+					 	</tree>
+						</field>
+				</group>
+              </page>
+            </notebook>
+        </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="new_action_window">
+      <field name="name">Sobek sale</field>
+      <field name="res_model">new.new</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+     <record model="ir.actions.act_window" id="return_action_window">
+      <field name="name">Sobek return</field>
+      <field name="res_model">return.return</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+	<record model="ir.actions.act_window" id="rasidat_action_window">
+      <field name="name">Sobek Rasidat</field>
+      <field name="res_model">rasidat.rasidat</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+
+     
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Sobek Tire" id="new.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Sale" id="new.menu_1" parent="new.menu_root" action="new_action_window"/>
+    <menuitem name="Return" id="new.menu_2" parent="new.menu_root" action="return_action_window"/>
+	<menuitem name="Rasidat" id="new.menu_3" parent="new.menu_root" action="rasidat_action_window"/>
+
+    <!-- actions -->
+ 
+  </data>
+</odoo>
