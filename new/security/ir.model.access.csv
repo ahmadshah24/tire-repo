@@ -5,5 +5,6 @@ access_rasidat_rasidat,rasidat.rasidat,model_rasidat_rasidat,base.group_user,1,1
 access_costumer_costumer,costumer.costumer,model_costumer_costumer,base.group_user,1,1,1,1
 access_crasidat_crasidat,crasidat.crasidat,model_crasidat_crasidat,base.group_user,1,1,1,1
 access_take_take,take.take,model_take_take,base.group_user,1,1,1,1
+access_stock_stock,stock.stock,model_stock_stock,base.group_user,1,1,1,1
 
 

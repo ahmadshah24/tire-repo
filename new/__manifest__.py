@@ -32,6 +32,7 @@
         'views/costumer_views.xml',
         'views/costumer_rasidat_views.xml',
         'views/take_views.xml',
+        'views/stock_views.xml',
         
     ],
     # only loaded in demonstration mode
