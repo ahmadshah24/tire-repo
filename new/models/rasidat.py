@@ -12,6 +12,7 @@ class Rasidat(models.Model):
     date = fields.Date("Date")
     amount = fields.Integer("Amount")
     to = fields.Char("Reciver")
+    active = fields.Boolean('Active', default=True)
 
 
     

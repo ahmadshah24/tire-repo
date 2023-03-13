@@ -13,6 +13,7 @@
           <field name="amount"/>
           <field name="check"/>
           <field name="to"/>
+           <field name="active"/>
         </tree>
       </field>
     </record>
@@ -35,6 +36,7 @@
                     <field name="check"/>
                     <field name="amount"/>
                     <field name="to"/>
+                     <field name="active"/>
                 </group>
             </group>
         </sheet>

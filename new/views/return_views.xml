@@ -12,6 +12,7 @@
           <field name="Cname"/>
           <field name="date"/>
           <field name="total"/>
+           <field name="active"/>
         </tree>
       </field>
     </record>
@@ -33,6 +34,7 @@
                 <group>
                     <field name="date"/>
                     <field name="total"/>
+                     <field name="active"/>
                 </group>
             </group>
         </sheet>

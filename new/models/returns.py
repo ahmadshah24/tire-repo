@@ -11,7 +11,7 @@ class Return(models.Model):
     date = fields.Date("Date")
     Cname = fields.Char("Costumer Name")
     total = fields.Integer("Total")
-
+    active = fields.Boolean('Active', default=True)
 
     sale_id =fields.Many2one("new.new")
 

@@ -2,16 +2,15 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="costumer_rasidat_list">
-      <field name="name">costumer.rasidat.list</field>
-      <field name="model">crasidat.crasidat</field>
+    <record model="ir.ui.view" id="atlas_purchase_list">
+      <field name="name">atlas.purchase.list</field>
+      <field name="model">atlas.purchase</field>
       <field name="arch" type="xml">
         <tree>
           <field name="no"/>
-          <field name="name"/>
+          <field name="invoice"/>
+          <field name="vender_id"/>
           <field name="date"/>
-          <field name="check"/>
-          <field name="amount"/>
            <field name="active"/>
         </tree>
       </field>
@@ -19,21 +18,20 @@
 
 <!-- form _________________________________ -->
 
-    <record model="ir.ui.view" id="costumer_rasidat_form">
-      <field name="name">costumer.rasidat.form</field>
-      <field name="model">crasidat.crasidat</field>
+    <record model="ir.ui.view" id="atlas_purchase_form">
+      <field name="name">atlas.purchase.form</field>
+      <field name="model">atlas.purchase</field>
       <field name="arch" type="xml">
         <form>
           <sheet>
             <group>
                 <group>
                     <field name="no"/>
-                    <field name="name"/>
+                    <field name="invoice"/>
+                    <field name="vender_id"/>
                 </group>
                 <group>
                     <field name="date"/>
-                    <field name="check"/>
-                    <field name="amount"/>
                      <field name="active"/>
                 </group>
             </group>
@@ -45,11 +43,11 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="crasidat_action_window">
-      <field name="name">Sobek Rasidat from costumers </field>
-      <field name="res_model">crasidat.crasidat</field>
+    <record model="ir.actions.act_window" id="purchase_action_window">
+      <field name="name">Sobek purchase</field>
+      <field name="res_model">atlas.purchase</field>
       <field name="view_mode">tree,form</field>
     </record>
-
+ 
   </data>
 </odoo>

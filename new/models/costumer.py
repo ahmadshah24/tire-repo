@@ -16,6 +16,7 @@ class Costumer(models.Model):
     cost = fields.Float("Per Cost")
     total = fields.Float(string='Total', compute='_total_amount')
     reminder = fields.Float(string='Reminder', compute='_total_reminder')
+    active = fields.Boolean('Active', default=True)
 
 
     rasid_ids = fields.One2many("crasidat.crasidat","costumer_id")

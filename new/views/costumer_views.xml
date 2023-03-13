@@ -16,6 +16,7 @@
           <field name="cost"/>
           <field name="total" sum="s"/>
           <field name="reminder" sum="s"/>
+           <field name="active"/>
         </tree>
       </field>
     </record>
@@ -41,6 +42,7 @@
                     <field name="cost"/>
                     <field name="total"/>
                     <field name="reminder"/>
+                     <field name="active"/>
                 </group>
             </group>
         </sheet>

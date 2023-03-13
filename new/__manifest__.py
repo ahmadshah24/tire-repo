@@ -26,13 +26,18 @@
     'data': [
         'security/ir.model.access.csv',
         'views/sale_views.xml',
-        'views/templates.xml',
         'views/return_views.xml',
         'views/rasidat_views.xml',
         'views/costumer_views.xml',
         'views/costumer_rasidat_views.xml',
         'views/take_views.xml',
         'views/stock_views.xml',
+        'views/costumer_info_views.xml',
+        'views/product_views.xml',
+        'views/sale_line_views.xml',
+        'views/purchase_views.xml',
+        'views/purchase_line_views.xml',
+        'views/vender_views.xml',
         
     ],
     # only loaded in demonstration mode

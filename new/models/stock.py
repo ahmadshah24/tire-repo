@@ -20,6 +20,8 @@ class Stock(models.Model):
     ctotal = fields.Float(string='Total', compute='_ctotal_amount')
     reminder = fields.Char("Matrail Reminder")
     mreminder = fields.Char("Money Reminder")
+    active = fields.Boolean('Active', default=True)
+
     
     @api.depends('amount','cost')
     def _total_amount(self):

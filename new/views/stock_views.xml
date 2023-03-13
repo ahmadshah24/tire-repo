@@ -13,6 +13,7 @@
           <field name="cost"/>
           <field name="amount"/>
           <field name="total"/>
+           <field name="active"/>
         </tree>
       </field>
     </record>
@@ -35,6 +36,7 @@
                     <field name="cost"/>
                     <field name="amount"/>
                     <field name="total"/>
+                     <field name="active"/>
                 </group>
             </group>
              <notebook>

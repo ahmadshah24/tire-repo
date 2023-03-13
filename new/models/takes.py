@@ -11,6 +11,7 @@ class Takes(models.Model):
     date = fields.Date("Date")
     amount = fields.Integer("Amount")
     # total = fields.Integer("Total ")
+    active = fields.Boolean('Active', default=True)
 
 
 
