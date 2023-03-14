@@ -11,4 +11,8 @@ class CostumerInfo(models.Model):
     phone = fields.Char("Phone")
     address = fields.Char("Address")
     active = fields.Boolean('Active', default=True)
-    
+    des = fields.Char("Description")
+    reminder = fields.Float("Reminder")
+    returns = fields.Float("Return")
+    sale = fields.Float("Sale")
+    rasid_id=fields.Many2one("crasidat.crasidat")

@@ -6,13 +6,16 @@ class CostumerRasidat(models.Model):
     _description = 'new tire rasidat '
 
     no = fields.Char("NO")
-    name = fields.Char("Costumer Name")
+    name = fields.Char("name")
     date = fields.Date("Date")
     check = fields.Date("Check No")
     amount = fields.Integer("Amount")
     active = fields.Boolean('Active', default=True)
+    des = fields.Char("Description")
+    
 
 
-    costumer_id=fields.Many2one("Costumer.costumer")
+    costumer_id=fields.Many2one("costumerinfo.costumerinfo")
+
 
     

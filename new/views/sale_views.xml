@@ -7,11 +7,11 @@
       <field name="model">atlas.sale</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="no"/>
+          <!-- <field name="no"/> -->
           <field name="billNo"/>
           <field name="costumer_id"/>
           <field name="date"/>
-          <field name="total" sum="a"/>
+          <field name="amount" sum="a"/>
            <field name="active"/>
         </tree>
       </field>
@@ -27,29 +27,31 @@
           <sheet>
             <group>
                 <group>
-                    <field name="no"/>
-                    <field name="billNo"/>
+                    <!-- <field name="no"/> -->
+                    <field name="billNo" required="1"/>
                     <field name="costumer_id"/>
+                     <field name="active"/>
                 </group>
                 <group>
                     <field name="date"/>
-                    <field name="total"/>
-                     <field name="active"/>
+                    <field name="amount" readonly="1"/>
                 </group>
             </group>
+              <group>
+                     <field name="des"/>
+              </group>
             <notebook>
-              <page string="Return Information">
-				<group>
-						<field name="return_id">
-					 	<tree editable="top">
-							<field name="no"/>
-							<field name="billNo"/>
-							<field name="Cname"/>
-							<field name="date"/>
-							<field name="total"/>
-					 	</tree>
-						</field>
-				</group>
+              <page string="product list">
+                  <group>
+                      <field name="line_ids">
+                      <tree editable="top" >
+                        <field name="product_id" required="1"/>
+                        <field name="quantity" required="1"/>
+                        <field name="price" required="1"/>
+                        <field name="total"/>
+                      </tree>
+                    </field>
+                  </group>
               </page>
             </notebook>
         </sheet>
@@ -82,11 +84,7 @@
     </record>
 
 
-  <record model="ir.actions.act_window" id="costumer_action_window">
-        <field name="name">Sobek Sales to Costumers</field>
-        <field name="res_model">costumer.costumer</field>
-        <field name="view_mode">tree,form</field>
-      </record>
+   
 
 
       
@@ -125,15 +123,7 @@
       <field name="res_model">atlas.product</field>
       <field name="view_mode">tree,form</field>
     </record>
-
-
-
-    <record model="ir.actions.act_window" id="atlas_sale_line_action_window">
-      <field name="name">Sobek Atlas sale Line</field>
-      <field name="res_model">atlas.sale.line</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
+ 
 
     <record model="ir.actions.act_window" id="atlas_purchase_action_window">
       <field name="name">Sobek purchase</field>
@@ -141,13 +131,6 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-
-    <record model="ir.actions.act_window" id="atlas_purchase_line_action_window">
-      <field name="name">Sobek Atlas purchase Line</field>
-      <field name="res_model">atlas.purchase.line</field>
-      <field name="view_mode">tree,form</field>
-    </record>
- 
     <record model="ir.actions.act_window" id="vender_action_window">
       <field name="name">Sobek Vender</field>
       <field name="res_model">vender.vender</field>
@@ -159,24 +142,20 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Sale" id="new.menu_sale_root" parent="new.menu_root"/>
-	<menuitem name="Rasidat" id="new.menu_3" parent="new.menu_root" action="rasidat_action_window"/>
-    <menuitem name="Costumer" id="new.menu_4" parent="new.menu_root" action="costumer_action_window"/>
-    <menuitem name="Costumer Rasidat" id="new.menu_5" parent="new.menu_root" action="crasidat_action_window"/>
-    <menuitem name="Takes" id="new.menu_6" parent="new.menu_root" action="take_action_window"/>
-    <menuitem name="Stock" id="new.menu_7" parent="new.menu_root" action="stock_action_window"/>
-    <menuitem name="Product" id="new.menu_product_root" parent="new.menu_root"/>
-    <menuitem name="Purchase" id="new.menu_purchase_root" parent="new.menu_root"/>
+    <menuitem name="Sale" id="new.menu_sale_root" parent="new.menu_root" sequence="1"/>
+    <menuitem name="Purchase" id="new.menu_purchase_root" parent="new.menu_root" sequence="2"/>
+   	<menuitem name="Office" id="new.menu_office" parent="new.menu_root" action="rasidat_action_window" sequence="3"/>
+    <menuitem name="Stock" id="new.menu_7" parent="new.menu_root" action="stock_action_window" sequence="4"/>
 
     <!-- submenus -->
-    <menuitem name="Sale" id="new.menu_sale" parent="new.menu_sale_root" action="sale_action_window"/>
-    <menuitem name="Customer" id="new.menu_customer" parent="new.menu_sale_root" action="costumerinfo_action_window"/>
-    <menuitem name="Return" id="new.menu_return" parent="new.menu_sale_root" action="return_action_window"/>
-    <menuitem name="product" id="new.menu_product" parent="new.menu_product_root" action="atlas_product_action_window"/>
-    <menuitem name="Sale line" id="new.menu_sale_line" parent="new.menu_sale_root" action="atlas_sale_line_action_window"/>
-    <menuitem name="purchase"  id="new.menu_purchase" parent="new.menu_purchase_root" action="atlas_purchase_action_window"/>
-    <menuitem name="purchase line"  id="new.menu_purchase_line" parent="new.menu_purchase_root" action="atlas_purchase_line_action_window"/>
-    <menuitem name="Vender"  id="new.menu_vender" parent="new.menu_purchase_root" action="vender_action_window"/>
-
+    <menuitem name="Sale" id="new.menu_sale" parent="new.menu_sale_root" action="sale_action_window" sequence="1"/>
+    <menuitem name="Customer" id="new.menu_customer" parent="new.menu_sale_root" action="costumerinfo_action_window" sequence="2"/>
+    <menuitem name="Return" id="new.menu_return" parent="new.menu_sale_root" action="return_action_window" sequence="4"/>
+    <menuitem name="product" id="new.menu_product" parent="new.menu_purchase_root" action="atlas_product_action_window" sequence="2"/>
+    <menuitem name="purchase"  id="new.menu_purchase" parent="new.menu_purchase_root" action="atlas_purchase_action_window" sequence="1"/>
+    <menuitem name="Vender"  id="new.menu_vender" parent="new.menu_purchase_root" action="vender_action_window" sequence="3"/>
+    <menuitem name="Rasidat" id="new.menu_office_1" parent="new.menu_office" action="rasidat_action_window"/>
+    <menuitem name="Takes" id="new.menu_office_2" parent="new.menu_office" action="take_action_window"/>
+    <menuitem name="Costumer Rasidat" id="new.menu_sale_3" parent="new.menu_sale_root" action="crasidat_action_window" sequence="3"/>
   </data>
 </odoo>

@@ -12,6 +12,7 @@
           <field name="check"/>
           <field name="amount" sum="a"/>
            <field name="active"/>
+           <field name="des"/>
         </tree>
       </field>
     </record>
@@ -33,6 +34,9 @@
                      <field name="active"/>
                 </group>
             </group>
+              <group>
+                     <field name="des"/>
+              </group>
         </sheet>
         </form>
       </field>

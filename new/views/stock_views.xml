@@ -39,19 +39,21 @@
                      <field name="active"/>
                 </group>
             </group>
+              <group>
+                     <field name="des"/>
+              </group>
              <notebook>
               <page string="Khoriji Stock Information">
-				<group>
-					 	
-							<field name="cname"/>
-							<field name="billNo"/>
-							<field name="date"/>
-							<field name="type"/>
-                            <field name="camount"/>
-                            <field name="ccost"/>
-							<field name="ctotal"/>
-                        
-				</group>
+			        	<group>
+                
+                  <field name="cname"/>
+                  <field name="billNo"/>
+                  <field name="date"/>
+                  <field name="type"/>
+                  <field name="camount"/>
+                  <field name="ccost"/>
+                  <field name="ctotal"/>
+        				</group>
               </page>
               <page string="Stock Reminder Information">
                 <group>

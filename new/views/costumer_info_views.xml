@@ -10,7 +10,11 @@
           <field name="name"/>
           <field name="phone"/>
           <field name="address"/>
-          <field name="active"/>
+          <!-- <field name="active"/> -->
+          <field name="reminder"/>
+          <field name="rasid_id"/>
+          <field name="returns"/>
+          <field name="sale"/>
         </tree>
       </field>
     </record>
@@ -30,7 +34,16 @@
                     <field name="address"/>
                     <field name="active"/>
                 </group>
+                <group>
+                    <field name="reminder"/>
+                    <field name="rasid_id"/>
+                    <field name="returns"/>
+                    <field name="sale"/>
+                </group>
             </group>
+              <group>
+                     <field name="des"/>
+              </group>
         </sheet>
         </form>
       </field>

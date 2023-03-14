@@ -9,7 +9,7 @@
         <tree>
           <field name="no"/>
           <field name="billNo"/>
-          <field name="Cname"/>
+          <field name="costumer_id"/>
           <field name="date"/>
           <field name="total"/>
            <field name="active"/>
@@ -29,7 +29,7 @@
                 <group>
                     <field name="no"/>
                     <field name="billNo"/>
-                    <field name="Cname"/>
+                    <field name="costumer_id"/>
                 </group>
                 <group>
                     <field name="date"/>
@@ -37,6 +37,9 @@
                      <field name="active"/>
                 </group>
             </group>
+              <group>
+                     <field name="des"/>
+              </group>
         </sheet>
         </form>
       </field>

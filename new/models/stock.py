@@ -21,6 +21,7 @@ class Stock(models.Model):
     reminder = fields.Char("Matrail Reminder")
     mreminder = fields.Char("Money Reminder")
     active = fields.Boolean('Active', default=True)
+    des = fields.Char("Description")
 
     
     @api.depends('amount','cost')

@@ -7,10 +7,10 @@
       <field name="model">atlas.purchase</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="no"/>
           <field name="invoice"/>
           <field name="vender_id"/>
           <field name="date"/>
+          <field name="amount"/>
            <field name="active"/>
         </tree>
       </field>
@@ -26,15 +26,32 @@
           <sheet>
             <group>
                 <group>
-                    <field name="no"/>
                     <field name="invoice"/>
                     <field name="vender_id"/>
+                     <field name="active"/>
                 </group>
                 <group>
                     <field name="date"/>
-                     <field name="active"/>
+                    <field name="amount"/>
                 </group>
             </group>
+              <group>
+                     <field name="des"/>
+              </group>
+            <notebook>
+              <page string="product list">
+                  <group>
+                      <field name="line_ids">
+                      <tree editable="top" >
+                        <field name="product_id" required="1"/>
+                        <field name="quantity" required="1"/>
+                        <field name="price" required="1"/>
+                        <field name="total"/>
+                      </tree>
+                    </field>
+                  </group>
+              </page>
+            </notebook>
         </sheet>
         </form>
       </field>
