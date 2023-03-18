@@ -10,7 +10,7 @@ class Takes(models.Model):
     check = fields.Char("Check No")
     date = fields.Date("Date")
     amount = fields.Integer("Amount")
-    des = fields.Char("Description")
+    des = fields.Text("Description")
     active = fields.Boolean('Active', default=True)
 
 

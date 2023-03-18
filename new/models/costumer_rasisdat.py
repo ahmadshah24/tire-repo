@@ -11,7 +11,7 @@ class CostumerRasidat(models.Model):
     check = fields.Date("Check No")
     amount = fields.Integer("Amount")
     active = fields.Boolean('Active', default=True)
-    des = fields.Char("Description")
+    des = fields.Text("Description")
     
 
 

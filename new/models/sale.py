@@ -13,7 +13,7 @@ class Sale(models.Model):
     Cname = fields.Char("Name")
     amount=fields.Float("Amount")
     active = fields.Boolean('Active', default=True)
-    des = fields.Char("Description")
+    des = fields.Text("Description")
  
     line_ids =fields.One2many('atlas.sale.line','sale_id')
 

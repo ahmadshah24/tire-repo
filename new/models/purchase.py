@@ -12,7 +12,7 @@ class Purchase(models.Model):
     date = fields.Date("Date")
     amount=fields.Float("Amount")
     active = fields.Boolean('Active', default=True)
-    des = fields.Char("Description")
+    des = fields.Text("Description")
    
 
     vender_id = fields.Many2one("vender.vender")

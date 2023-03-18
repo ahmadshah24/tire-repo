@@ -11,7 +11,7 @@ class CostumerInfo(models.Model):
     phone = fields.Char("Phone")
     address = fields.Char("Address")
     active = fields.Boolean('Active', default=True)
-    des = fields.Char("Description")
+    des = fields.Text("Description")
     reminder = fields.Float("Reminder")
     returns = fields.Float("Return")
     sale = fields.Float("Sale")

@@ -10,7 +10,6 @@
           <field name="name"/>
           <field name="phone"/>
           <field name="address"/>
-          <!-- <field name="active"/> -->
           <field name="reminder"/>
           <field name="rasid_id"/>
           <field name="returns"/>

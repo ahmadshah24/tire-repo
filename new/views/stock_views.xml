@@ -9,7 +9,7 @@
         <tree>
           <field name="no"/>
           <field name="name"/>
-          <field name="type"/>
+          <field name="product_id"/>
           <field name="cost"/>
           <field name="amount"/>
           <field name="total"/>
@@ -30,7 +30,7 @@
                 <group>
                     <field name="no"/>
                     <field name="name"/>
-                    <field name="type"/>
+                    <field name="product_id"/>
                 </group>
                 <group>
                     <field name="cost"/>
@@ -44,23 +44,17 @@
               </group>
              <notebook>
               <page string="Khoriji Stock Information">
-			        	<group>
-                
-                  <field name="cname"/>
-                  <field name="billNo"/>
-                  <field name="date"/>
-                  <field name="type"/>
-                  <field name="camount"/>
-                  <field name="ccost"/>
-                  <field name="ctotal"/>
-        				</group>
-              </page>
-              <page string="Stock Reminder Information">
-                <group>
-
-                            <field name="reminder"/>
-                            <field name="mreminder"/>
-                </group>
+                    <field name="line_ids">
+			        	      <tree editable="top">
+                           <field name="costumer_id"/>
+                           <field name="billNo"/>
+                           <field name="date"/>
+                           <field name="product_id"/>
+                           <field name="cquantity"/>
+                           <field name="cprice"/>
+                           <field name="ctotal"/>
+                        </tree>
+                      </field>
               </page>
             </notebook>
         </sheet>

@@ -12,12 +12,8 @@ class Product(models.Model):
     pattern = fields.Char("Pattern")
     pr = fields.Char("PR")
     active = fields.Boolean('Active', default=True)
-    des = fields.Char("Description")
+    des = fields.Text("Description")
  
-    # return_id =fields.One2many("return.return","sale_id")
-
-    # sale_id=fields.Many2one("atlas.sale")
-    
 
 
     

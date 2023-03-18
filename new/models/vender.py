@@ -9,7 +9,7 @@ class Vender(models.Model):
     address = fields.Char("Address")
     phone = fields.Char("phone")
     active = fields.Boolean('Active', default=True)
-    des = fields.Char("Description")
+    des = fields.Text("Description")
 
     product_id=fields.Many2one("atlas.product")
 

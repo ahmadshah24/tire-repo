@@ -13,7 +13,7 @@ class Rasidat(models.Model):
     to = fields.Char("Reciver")
     through = fields.Char("Through")
     active = fields.Boolean('Active', default=True)
-    des = fields.Char("Description")
+    des = fields.Text("Description")
 
 
     costumer_id=fields.Many2one("costumerinfo.costumerinfo")
