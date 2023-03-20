@@ -35,6 +35,8 @@
         'views/product_views.xml',
         'views/purchase_views.xml',
         'views/vender_views.xml',
+        'reports/report.xml',
+        'reports/sale_monthly_report.xml',
         
     ],
     # only loaded in demonstration mode
