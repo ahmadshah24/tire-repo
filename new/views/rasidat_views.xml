@@ -30,14 +30,14 @@
             <group>
                 <group>
                     <field name="no"/>
-                    <field name="costumer_id"/>
+                    <field name="costumer_id" required="1"/>
                     <field name="date"/>
                     <field name="through"/>
                 </group>
                 <group>
-                    <field name="check"/>
-                    <field name="amount"/>
-                    <field name="to"/>
+                    <field name="check" required="1"/>
+                    <field name="amount" required="1"/>
+                    <field name="to" required="1"/>
                      <field name="active"/>
                 </group>
             </group>

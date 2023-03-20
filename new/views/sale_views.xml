@@ -13,6 +13,7 @@
           <field name="date"/>
           <field name="amount" sum="a"/>
            <field name="active"/>
+           <field name="state"/>
         </tree>
       </field>
     </record>
@@ -24,26 +25,31 @@
       <field name="model">atlas.sale</field>
       <field name="arch" type="xml">
         <form>
+         <header>
+                <!-- <button name="action_draft" string="Approved" type="object" states="draft"/> -->
+                <button name="action_approved" string="Approved" type="object" states="draft"/>
+                <field name="state" widget="statusbar" />
+            </header>
           <sheet>
             <group>
                 <group>
                     <!-- <field name="no"/> -->
-                    <field name="billNo" required="1"/>
-                    <field name="costumer_id"/>
+                    <field name="billNo" required="1" attrs="{'readonly': [('state', '=', 'approved')]}"/>
+                    <field name="costumer_id" required="1" attrs="{'readonly': [('state', '=', 'approved')]}"/>
                      <field name="active"/>
                 </group>
                 <group>
-                    <field name="date"/>
-                    <field name="amount" readonly="1"/>
+                    <field name="date" attrs="{'readonly': [('state', '=', 'approved')]}"/>
+                    <field name="amount" readonly="1" attrs="{'readonly': [('state', '=', 'approved')]}"/>
                 </group>
             </group>
               <group>
-                     <field name="des"/>
+                     <field name="des" attrs="{'readonly': [('state', '=', 'approved')]}"/>
               </group>
             <notebook>
               <page string="product list">
                   <group>
-                      <field name="line_ids">
+                      <field name="line_ids" attrs="{'readonly': [('state', '=', 'approved')]}">
                       <tree editable="top" >
                         <field name="product_id" required="1"/>
                         <field name="quantity" required="1"/>

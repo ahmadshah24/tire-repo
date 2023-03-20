@@ -29,8 +29,8 @@
                 <group>
                     <field name="no"/>
                     <field name="date"/>
-                    <field name="check"/>
-                    <field name="amount"/>
+                    <field name="check" required="1"/>
+                    <field name="amount" required="1"/>
                      <field name="active"/>
                 </group>
             </group>

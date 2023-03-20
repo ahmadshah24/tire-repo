@@ -13,7 +13,6 @@ class Product(models.Model):
     pr = fields.Char("PR")
     active = fields.Boolean('Active', default=True)
     des = fields.Text("Description")
+    quantity_onhand = fields.Integer("On Hand Quantity")
  
-
-
-    
+ 

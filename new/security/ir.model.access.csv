@@ -10,3 +10,5 @@ access_atlas_product,atlas.product,model_atlas_product,base.group_user,1,1,1,1
 access_atlas_sale_line,atlas.sale.line,model_atlas_sale_line,base.group_user,1,1,1,1
 access_atlas_purchase,atlas.purchase,model_atlas_purchase,base.group_user,1,1,1,1
 access_vender_vender,vender.vender,model_vender_vender,base.group_user,1,1,1,1
+access_atlas_purchase_line,atlas.purchase.line,model_atlas_purchase_line,base.group_user,1,1,1,1
+access_atlas_stock_line,atlas.stock.line,model_atlas_stock_line,base.group_user,1,1,1,1

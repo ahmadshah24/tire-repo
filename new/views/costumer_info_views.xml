@@ -28,9 +28,9 @@
           <sheet>
             <group>
                 <group>
-                    <field name="name"/>
+                    <field name="name" required="1"/>
                     <field name="phone"/>
-                    <field name="address"/>
+                    <field name="address" required="1"/>
                     <field name="active"/>
                 </group>
                 <group>

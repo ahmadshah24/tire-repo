@@ -10,6 +10,7 @@
           <field name="name"/>
           <field name="type"/>
           <field name="size"/>
+          <field name="quantity_onhand"/>
           <field name="pattern"/>
           <field name="pr"/>
            <field name="active"/>
@@ -27,11 +28,14 @@
           <sheet>
             <group>
                 <group>
-                    <field name="name"/>
-                    <field name="type"/>
-                    <field name="size"/>
-                    <field name="pattern"/>
-                    <field name="pr"/>
+                    <field name="name" required="1"/>
+                    <field name="type" required="1"/>
+                    <field name="size" required="1"/>
+                </group>
+                 <group>
+                    <field name="pattern" required="1"/>
+                    <field name="pr" required="1"/>
+                     <field name="quantity_onhand" readonly="1"/>
                      <field name="active"/>
                 </group>
             </group>

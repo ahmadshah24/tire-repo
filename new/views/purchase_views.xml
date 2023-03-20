@@ -12,6 +12,7 @@
           <field name="date"/>
           <field name="amount"/>
            <field name="active"/>
+           <field name="state"/>
         </tree>
       </field>
     </record>
@@ -23,25 +24,30 @@
       <field name="model">atlas.purchase</field>
       <field name="arch" type="xml">
         <form>
+          <header>
+                <!-- <button name="action_draft" string="Draft" type="object" states="approved"/> -->
+                <button name="action_approved" string="Approve" type="object" states="draft"/>
+                <field name="state" widget="statusbar" />
+            </header>
           <sheet>
             <group>
                 <group>
-                    <field name="invoice"/>
-                    <field name="vender_id"/>
+                    <field name="invoice" attrs="{'readonly': [('state', '=', 'approved')]}"/>
+                    <field name="vender_id" required="1" attrs="{'readonly': [('state', '=', 'approved')]}"/>
                      <field name="active"/>
                 </group>
                 <group>
-                    <field name="date"/>
-                    <field name="amount"/>
+                    <field name="date" attrs="{'readonly': [('state', '=', 'approved')]}"/>
+                    <field name="amount" readonly="1" attrs="{'readonly': [('state', '=', 'approved')]}"/>
                 </group>
             </group>
               <group>
-                     <field name="des"/>
+                     <field name="des" attrs="{'readonly': [('state', '=', 'approved')]}"/>
               </group>
             <notebook>
               <page string="product list">
                   <group>
-                      <field name="line_ids">
+                      <field name="line_ids" attrs="{'readonly': [('state', '=', 'approved')]}">
                       <tree editable="top" >
                         <field name="product_id" required="1"/>
                         <field name="quantity" required="1"/>

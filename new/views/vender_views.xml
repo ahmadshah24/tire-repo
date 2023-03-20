@@ -26,10 +26,10 @@
           <sheet>
             <group>
                 <group>
-                    <field name="name"/>
+                    <field name="name" required="1"/>
                     <field name="address"/>
                     <field name="phone"/>
-                    <field name="product_id"/>
+                    <field name="product_id" required="1"/>
                      <field name="active"/>
                 </group>
             </group>
