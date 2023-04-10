@@ -11,7 +11,7 @@
           <field name="phone"/>
           <field name="address"/>
           <field name="reminder"/>
-          <field name="rasid_id"/>
+          <field name="rasid"/>
           <field name="returns"/>
           <field name="sale"/>
         </tree>
@@ -34,10 +34,10 @@
                     <field name="active"/>
                 </group>
                 <group>
-                    <field name="reminder"/>
-                    <field name="rasid_id"/>
+                    <field name="rasid"/>
                     <field name="returns"/>
                     <field name="sale"/>
+                    <field name="reminder"/>
                 </group>
             </group>
               <group>

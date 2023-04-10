@@ -21,8 +21,6 @@ class Purchase(models.Model):
 
     @api.constrains('line_ids')
     def _total_bill(self):
-        
-        
         if any(self.line_ids):
             total = 0
             for line in self.line_ids:

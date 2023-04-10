@@ -37,6 +37,14 @@
         'views/vender_views.xml',
         'reports/report.xml',
         'reports/sale_monthly_report.xml',
+        'reports/purchase_monthly_report.xml',
+        'reports/costumer_monthly_report.xml',
+        'reports/costumer_rasidat_monthly_report.xml',
+        'reports/return_monthly_report.xml',
+        'reports/product_monthly_report.xml',
+        'reports/vender_monthly_report.xml',
+        'reports/takes_monthly_report.xml',
+        'reports/rasidat_monthly_report.xml',
         
     ],
     # only loaded in demonstration mode

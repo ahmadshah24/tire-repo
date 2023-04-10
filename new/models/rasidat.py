@@ -18,5 +18,5 @@ class Rasidat(models.Model):
 
     costumer_id=fields.Many2one("costumerinfo.costumerinfo")
 
-
+    
     

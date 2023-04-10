@@ -8,7 +8,7 @@ class CostumerRasidat(models.Model):
     no = fields.Char("NO")
     name = fields.Char("name")
     date = fields.Date("Date")
-    check = fields.Date("Check No")
+    check = fields.Integer("Check No")
     amount = fields.Integer("Amount")
     active = fields.Boolean('Active', default=True)
     des = fields.Text("Description")
@@ -17,5 +17,8 @@ class CostumerRasidat(models.Model):
 
     costumer_id=fields.Many2one("costumerinfo.costumerinfo")
 
+    @api.constrains('amount')
+    def calculate_costumer_rasidat(self):
+        self.env['atlas.sale'].costumer_calculations(self.costumer_id)
 
     

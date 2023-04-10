@@ -11,5 +11,4 @@ class Vender(models.Model):
     active = fields.Boolean('Active', default=True)
     des = fields.Text("Description")
 
-    product_id=fields.Many2one("atlas.product")
 

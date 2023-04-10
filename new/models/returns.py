@@ -19,7 +19,9 @@ class Return(models.Model):
     costumer_id=fields.Many2one("costumerinfo.costumerinfo")
     product_id=fields.Many2one("atlas.product")
 
-    
+    @api.constrains('total')
+    def calculate_costumer_return(self):
+        self.env['atlas.sale'].costumer_calculations(self.costumer_id)
 
 
 

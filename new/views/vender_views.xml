@@ -10,7 +10,6 @@
           <field name="name"/>
           <field name="address"/>
           <field name="phone"/>
-          <field name="product_id"/>
            <field name="active"/>
         </tree>
       </field>
@@ -29,7 +28,6 @@
                     <field name="name" required="1"/>
                     <field name="address"/>
                     <field name="phone"/>
-                    <field name="product_id" required="1"/>
                      <field name="active"/>
                 </group>
             </group>
