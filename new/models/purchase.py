@@ -44,8 +44,6 @@ class Purchase(models.Model):
             line.product_id.write({'quantity_onhand': current_onhand+line.quantity})
         self.write({'state': 'approved'})
 
-
-
 class PurchaseLine(models.Model):
     _name = 'atlas.purchase.line'
     _description = 'new tire purchase line'

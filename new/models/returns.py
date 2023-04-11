@@ -18,12 +18,20 @@ class Return(models.Model):
     sale_id =fields.Many2one("new.new")
     costumer_id=fields.Many2one("costumerinfo.costumerinfo")
     product_id=fields.Many2one("atlas.product")
+    
 
     @api.constrains('total')
     def calculate_costumer_return(self):
         self.env['atlas.sale'].costumer_calculations(self.costumer_id)
 
 
+    @api.constrains('quantity')
+    def calc_return_quantity_onhand(self):
+        
+        for rec in self:
+            product_obj = self.env['atlas.product'].search([('id', '=', rec.product_id.id)])
+            current_quantity_onhand = product_obj.quantity_onhand
+            product_obj.write({'quantity_onhand': current_quantity_onhand + rec.quantity})
 
 
 

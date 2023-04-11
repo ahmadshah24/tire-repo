@@ -51,19 +51,19 @@ class Sale(models.Model):
     def calculate_costumer_sale(self):
         self.env['atlas.sale'].costumer_calculations(self.costumer_id)
     product_id=fields.Many2one("atlas.product")
+ 
+    @api.constrains('amount')
+    def check_quantity_onhand(self):
+        for rec in self:
+            product_obj = self.env['atlas.product'].search([('id', '=', rec.product_id.id)])
+            current_quantity_onhand = product_obj.quantity_onhand
+            if product_obj.quantity_onhand < self.amount:
+                    raise UserError('Not enough quantity of product!')
 
-
-    # @api.constrains('product_id')
-    # def _check_investment(self):
-    #     # project_id = self.project_id
-    #     investment_ids = self.env['investment.investment'].search([('project_id', '=', self.project_id.id)])
-    #     if not investment_ids:
-    #         raise ValidationError(("There are no investments for the selected project. You cannot proceed with the sale."))
-
+    
     @api.constrains('amount')
     def calc_costumer_calculations(self):
         for rec in self:
-            # costumer_id = costumer_id if costumer_id else rec.costumer_id
             self.costumer_calculations(self.costumer_id) 
     
 
@@ -103,18 +103,11 @@ class SaleLine(models.Model):
 
     sale_id=fields.Many2one('atlas.sale')
     product_id =fields.Many2one("atlas.product")
-    
-    # product_ids=fields.One2many("atlas.product","sale_id")
-
-
+     
     @api.depends('quantity', 'price')
     def _total_amount(self):
-
         for rec in self:
-
             rec.update({
-
                 'total': rec.quantity*rec.price,
-
             })
  
