@@ -8,6 +8,7 @@ class Vender(models.Model):
     name = fields.Char("Company Name ")
     address = fields.Char("Address")
     phone = fields.Char("phone")
+    email=fields.Char("Email")
     active = fields.Boolean('Active', default=True)
     des = fields.Text("Description")
 

@@ -1,14 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="costumer_monthly_report">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="o">
-                <div class="page">
-                    <center>
-                    <h1>This is my costumer report</h1>
-                    </center>
-                    <p><span t-esc="o"/></p>
-                </div>
+    <data>
+        <!-- Report template -->
+        <template id="costumer_rasidat_monthly_report">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="header">
+                            <div class="company-info">
+                                <div class="company-name">[Atlas Tire]</div>
+                                <div class="company-address">[Haroon Market Shar-e naw ,Kabul, Afghanistan]</div>
+                                <div class="company-phone">[+93 (0) 787293329]</div>
+                            </div>
+                            
+                        </div>
+                        <center>
+                            <h1>Atlas costumer report</h1>
+                        
+                        <table class="table table-condensed" border="1" style="border: 1px solid black; width:80%; text-align:center;">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Customer Name</th>
+                                    <th>Date</th>
+                                    <th>Check No</th>
+                                    <th>Amount</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="docs" t-as="o">
+                                    <td><t t-esc="o.no"/></td>
+                                    <td><span t-field="o.costumer_id.name"/></td>
+                                    <td><t t-esc="o.date"/></td>
+                                    <td><t t-esc="o.check"/></td>
+                                    <td><t t-esc="o.amount"/></td>
+                                    <td><t t-esc="o.des"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </center>
+                    </div>
+                    <div class="footer">
+                            <div class="address">123 Main St., Anytown, USA</div>
+                            <div class="phone">123-456-7890</div>
+                    </div>
+                </t>
             </t>
-        </t>
-    </template>
+        </template>
+  
+
+    <record model="ir.actions.report" id="action_costumer_rasidat_monthly_report">
+        <field name="name">Atlas Costumer Rasidat Report</field>
+        <field name="model">crasidat.crasidat</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">new.costumer_rasidat_monthly_report</field>
+        <field name="report_file">new.cotumer_rasidat_monthly_report</field>
+        <field name="print_report_name">'Atlas costumer Rasidat Report'</field>
+        <field name="binding_model_id" ref="model_crasidat_crasidat"></field>
+        <field name="binding_type">report</field>
+    </record>
+
+    
+
+    </data>
 </odoo>

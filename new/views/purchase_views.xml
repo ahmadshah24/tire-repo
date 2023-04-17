@@ -25,7 +25,7 @@
       <field name="arch" type="xml">
         <form>
           <header>
-                <!-- <button name="action_draft" string="Draft" type="object" states="approved"/> -->
+                <button name="action_draft" string="Draft" type="object" states="approved"/>
                 <button name="action_approved" string="Approve" type="object" states="draft"/>
                 <field name="state" widget="statusbar" />
             </header>

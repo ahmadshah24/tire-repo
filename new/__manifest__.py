@@ -30,12 +30,13 @@
         'views/rasidat_views.xml',
         'views/costumer_rasidat_views.xml',
         'views/take_views.xml',
-        'views/stock_views.xml',
         'views/costumer_info_views.xml',
         'views/product_views.xml',
         'views/purchase_views.xml',
         'views/vender_views.xml',
+        'wizard/atlas_genral_report_wizard.xml',
         'reports/report.xml',
+        'reports/atlas_genral_report.xml',
         'reports/sale_monthly_report.xml',
         'reports/purchase_monthly_report.xml',
         'reports/costumer_monthly_report.xml',
@@ -46,6 +47,9 @@
         'reports/takes_monthly_report.xml',
         'reports/rasidat_monthly_report.xml',
         
+    ],
+    'report.xmlid': [
+        'new.atlas_genral_report',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,14 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="returns_monthly_report">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="o">
-                <div class="page">
-                    <center>
-                    <h1>This is my Returns report</h1>
-                    </center>
-                    <p><span t-esc="o"/></p>
+    <data>
+        <!-- Report template -->
+        <template id="return_monthly_report">
+    <t t-call="web.html_container">
+        <t t-as="o">
+            <div class="page">
+                <div class="header">
+                    <div class="company-info">
+                        <div class="company-name">[Atlas Tire]</div>
+                        <div class="company-address">[Haroon Market Shar-e naw ,Kabul, Afghanistan]</div>
+                        <div class="company-phone">[+93 (0) 787293329]</div>
+                    </div>
                 </div>
-            </t>
+                <center>
+                    <h1>Atlas Returns report</h1>
+                    <table class="table table-condensed" border="1" style="border: 1px solid black; width:80%; text-align:center;">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Bill No</th>
+                                <th>Costumer</th>
+                                <th>date</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="o">
+                                <td><t t-esc="o.no"/></td>
+                                <td><t t-esc="o.billNo"/></td>
+                                <td><span t-field="o.costumer_id.name"/></td>
+                                <td><t t-esc="o.date"/></td>
+                                <td><t t-esc="o.product_id.name"/></td>
+                                <td><t t-esc="o.quantity"/></td>
+                                <td><t t-esc="o.price"/></td>
+                                <td><t t-esc="o.total"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </center>
+            </div>
+            <div class="footer">
+                <div class="address">Between Haji Yaqab Square and Ansari Squar Haroon Market ,Kabul ,Afghanistan</div>
+                <div class="phone">+93(0)787293329</div>
+            </div>
         </t>
-    </template>
+    </t>
+</template>
+
+  
+<record model="ir.actions.report" id="action_return_monthly_report">
+        <field name="name">Atlas Returns Report</field>
+        <field name="model">return.return</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">new.return_monthly_report</field>
+        <field name="report_file">new.return_monthly_report</field>
+        <field name="print_report_name">'Atlas Returns Report'</field>
+        <field name="binding_model_id" ref="model_return_return"></field>
+        <field name="binding_type">report</field>
+    </record>
+
+    </data>
 </odoo>

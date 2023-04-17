@@ -1,14 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="rasidat_monthly_report">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="o">
-                <div class="page">
-                    <center>
-                    <h1>This is my Rasidat report</h1>
-                    </center>
-                    <p><span t-esc="o"/></p>
+    <data>
+        <!-- Report template -->
+        <template id="rasidat_monthly_report">
+    <t t-call="web.html_container">
+        <t t-as="o">
+            <div class="page">
+                <div class="header">
+                    <div class="company-info">
+                        <div class="company-name">[Atlas Tire]</div>
+                        <div class="company-address">[Haroon Market Shar-e naw ,Kabul, Afghanistan]</div>
+                        <div class="company-phone">[+93 (0) 787293329]</div>
+                    </div>
                 </div>
-            </t>
+                <center>
+                    <h1>Atlas Raidat report</h1>
+                    <table class="table table-condensed" border="1" style="border: 1px solid black; width:80%; text-align:center;">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Costumer</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Check No</th>
+                                <th>Reciver</th>
+                                <th>Through</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="docs" t-as="o">
+                                <td><t t-esc="o.no"/></td>
+                                <td><span t-field="o.costumer_id.name"/></td>
+                                <td><t t-esc="o.date"/></td>
+                                <td><t t-esc="o.amount"/></td>
+                                <td><t t-esc="o.check"/></td>
+                                <td><t t-esc="o.to"/></td>
+                                <td><t t-esc="o.through"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </center>
+            </div>
+            <div class="footer">
+                <div class="address">Between Haji Yaqab Square and Ansari Squar Haroon Market ,Kabul ,Afghanistan</div>
+                <div class="phone">+93(0)787293329</div>
+            </div>
         </t>
-    </template>
+    </t>
+</template>
+
+  
+<record model="ir.actions.report" id="action_rasidat_monthly_report">
+        <field name="name">Atlas Raidat Report</field>
+        <field name="model">rasidat.rasidat</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">new.rasidat_monthly_report</field>
+        <field name="report_file">new.rasidat_monthly_report</field>
+        <field name="print_report_name">'Atlas Rasidat Report'</field>
+        <field name="binding_model_id" ref="model_rasidat_rasidat"></field>
+        <field name="binding_type">report</field>
+    </record>
+    
+
+    </data>
 </odoo>

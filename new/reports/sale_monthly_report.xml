@@ -1,12 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="sale_monthly_report">
-        <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="o">
-                <div class="page">
-                    <h1>This is my first report</h1>
-                    <p><span t-esc="o"/></p>
+    <data>
+        <!-- Report template -->
+        <template id="sale_monthly_report">
+    <t t-call="web.html_container">
+        <div class="page">
+            <div class="header">
+                <div class="company-info">
+                    <div class="company-name">[Atlas Tire]</div>
+                    <div class="company-address">[Haroon Market Shar-e naw ,Kabul, Afghanistan]</div>
+                    <div class="company-phone">[+93 (0) 787293329]</div>
                 </div>
-            </t>
-        </t>
-    </template>
+            </div>
+            <center>
+                <h1>Atlas sale report</h1>
+                <table class="table table-condensed" border="1" style="border: 1px solid black; width:80%">
+                    <thead>
+                        <tr>
+                            <th>Bill No</th>
+                            <th>Customer Name</th>
+                            <th>Date</th>
+                            <th>Product</th>
+                            <th>price</th>
+                            <th>Quantity</th>
+                            <th>Total Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="docs" t-as="o">
+                            <td><span t-field="o.billNo"/></td>
+                            <td><t t-esc="o.Cname"/></td>
+                            <td><t t-esc="o.date"/></td>
+                            <td>
+                                    <span t-foreach="o.line_ids" t-as="line">
+                                        <t t-esc="line.product_id.name"/><br/>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span t-foreach="o.line_ids" t-as="line">
+                                        <t t-esc="line.price"/><br/>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span t-foreach="o.line_ids" t-as="line">
+                                        <t t-esc="line.quantity"/><br/>
+                                    </span>
+                                </td>
+                            <td><t t-esc="o.amount"/></td>
+                        </tr>
+                         <tr>
+                            <td colspan="5"></td>
+                            <td><b>Total:</b></td>
+                            <td><b><t t-esc="sum(doc.amount for doc in docs)"/></b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+        </div>
+        <div class="footer">
+            <div class="address">123 Main St., Anytown, USA</div>
+            <div class="phone">123-456-7890</div>
+        </div>
+    </t>
+</template>
+
+  
+
+    <record model="ir.actions.report" id="action_sale_monthly_report">
+        <field name="name">Atlas Sala  ly Report</field>
+        <field name="model">atlas.sale</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">new.sale_monthly_report</field>
+        <field name="report_file">new.sale_monthly_report</field>
+        <field name="print_report_name">'Atlas Sale Report'</field>
+        <field name="binding_model_id" ref="model_atlas_sale"></field>
+        <field name="binding_type">report</field>
+    </record>
+    
+
+    </data>
 </odoo>

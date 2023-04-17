@@ -6,7 +6,7 @@ from . import rasidat
 # from . import costumer
 from . import costumer_rasisdat
 from . import takes
-from . import stock
+# from . import stock
 from . import costumer_info
 from . import product
 # from . import sale_line

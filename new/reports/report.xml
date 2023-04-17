@@ -1,5 +1,8 @@
 <odoo>
-    <record model="ir.actions.report" id="action_sale_monthly_report">
+
+
+    
+    <!-- <record model="ir.actions.report" id="action_sale_monthly_report">
         <field name="name">Atlas Sala  ly Report</field>
         <field name="model">atlas.sale</field>
         <field name="report_type">qweb-pdf</field>
@@ -8,8 +11,8 @@
         <field name="print_report_name">'Atlas Sale Report'</field>
         <field name="binding_model_id" ref="model_atlas_sale"></field>
         <field name="binding_type">report</field>
-    </record>
-    <record model="ir.actions.report" id="action_purchase_monthly_report">
+    </record> -->
+    <!-- <record model="ir.actions.report" id="action_purchase_monthly_report">
         <field name="name">Atlas Purchase  Report</field>
         <field name="model">atlas.purchase</field>
         <field name="report_type">qweb-pdf</field>
@@ -18,8 +21,8 @@
         <field name="print_report_name">'Atlas purchase Report'</field>
         <field name="binding_model_id" ref="model_atlas_purchase"></field>
         <field name="binding_type">report</field>
-    </record>
-     <record model="ir.actions.report" id="action_costumer_monthly_report">
+    </record> -->
+     <!-- <record model="ir.actions.report" id="action_costumer_monthly_report">
         <field name="name">Atlas Costumer Report</field>
         <field name="model">costumerinfo.costumerinfo</field>
         <field name="report_type">qweb-pdf</field>
@@ -28,8 +31,8 @@
         <field name="print_report_name">'Atlas costumer Report'</field>
         <field name="binding_model_id" ref="model_costumerinfo_costumerinfo"></field>
         <field name="binding_type">report</field>
-    </record>
-     <record model="ir.actions.report" id="action_costumer_rasidat_monthly_report">
+    </record> -->
+     <!-- <record model="ir.actions.report" id="action_costumer_rasidat_monthly_report">
         <field name="name">Atlas Costumer Rasidat Report</field>
         <field name="model">crasidat.crasidat</field>
         <field name="report_type">qweb-pdf</field>
@@ -38,8 +41,8 @@
         <field name="print_report_name">'Atlas costumer Rasidat Report'</field>
         <field name="binding_model_id" ref="model_crasidat_crasidat"></field>
         <field name="binding_type">report</field>
-    </record>
-    <record model="ir.actions.report" id="action_return_monthly_report">
+    </record> -->
+    <!-- <record model="ir.actions.report" id="action_return_monthly_report">
         <field name="name">Atlas Returns Report</field>
         <field name="model">return.return</field>
         <field name="report_type">qweb-pdf</field>
@@ -48,8 +51,8 @@
         <field name="print_report_name">'Atlas Returns Report'</field>
         <field name="binding_model_id" ref="model_return_return"></field>
         <field name="binding_type">report</field>
-    </record>
-    <record model="ir.actions.report" id="action_product_monthly_report">
+    </record> -->
+    <!-- <record model="ir.actions.report" id="action_product_monthly_report">
         <field name="name">Atlas Product Report</field>
         <field name="model">atlas.product</field>
         <field name="report_type">qweb-pdf</field>
@@ -58,8 +61,8 @@
         <field name="print_report_name">'Atlas Product Report'</field>
         <field name="binding_model_id" ref="model_atlas_product"></field>
         <field name="binding_type">report</field>
-    </record>
-    <record model="ir.actions.report" id="action_vender_monthly_report">
+    </record> -->
+    <!-- <record model="ir.actions.report" id="action_vender_monthly_report">
         <field name="name">Atlas Vender Report</field>
         <field name="model">vender.vender</field>
         <field name="report_type">qweb-pdf</field>
@@ -68,8 +71,8 @@
         <field name="print_report_name">'Atlas Vender Report'</field>
         <field name="binding_model_id" ref="model_vender_vender"></field>
         <field name="binding_type">report</field>
-    </record>
-    <record model="ir.actions.report" id="action_takes_monthly_report">
+    </record> -->
+    <!-- <record model="ir.actions.report" id="action_takes_monthly_report">
         <field name="name">Atlas Takes Report</field>
         <field name="model">take.take</field>
         <field name="report_type">qweb-pdf</field>
@@ -78,8 +81,8 @@
         <field name="print_report_name">'Atlas Takes Report'</field>
         <field name="binding_model_id" ref="model_take_take"></field>
         <field name="binding_type">report</field>
-    </record>
-    <record model="ir.actions.report" id="action_rasidat_monthly_report">
+    </record> -->
+    <!-- <record model="ir.actions.report" id="action_rasidat_monthly_report">
         <field name="name">Atlas Raidat Report</field>
         <field name="model">rasidat.rasidat</field>
         <field name="report_type">qweb-pdf</field>
@@ -88,5 +91,5 @@
         <field name="print_report_name">'Atlas Rasidat Report'</field>
         <field name="binding_model_id" ref="model_rasidat_rasidat"></field>
         <field name="binding_type">report</field>
-    </record>
+    </record> -->
 </odoo>

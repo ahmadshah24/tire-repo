@@ -26,8 +26,8 @@
       <field name="arch" type="xml">
         <form>
          <header>
-                <!-- <button name="action_draft" string="Approved" type="object" states="draft"/> -->
-                <button name="action_approved" string="Approved" type="object" states="draft"/>
+                <button name="action_draft" string="Draft" type="object" states="approved"/>
+                <button name="action_approved" string="Approve" type="object" states="draft"/>
                 <field name="state" widget="statusbar" />
             </header>
           <sheet>
@@ -74,12 +74,13 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-
      <record model="ir.actions.act_window" id="return_action_window">
       <field name="name">Sobek return</field>
       <field name="res_model">return.return</field>
       <field name="view_mode">tree,form</field>
     </record>
+    
+
 
 
 
@@ -110,11 +111,7 @@
     </record>
 
 
-    <record model="ir.actions.act_window" id="stock_action_window">
-      <field name="name">Sobek Stock Tire And Tube</field>
-      <field name="res_model">stock.stock</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+    
 
 
      <record model="ir.actions.act_window" id="costumerinfo_action_window">
@@ -142,6 +139,10 @@
       <field name="res_model">vender.vender</field>
       <field name="view_mode">tree,form</field>
     </record>
+
+
+    <!-- wizard action -->
+    
     <!-- Top menu item -->
 
     <menuitem name="Sobek Tire" id="new.menu_root"/>
@@ -151,7 +152,7 @@
     <menuitem name="Sale" id="new.menu_sale_root" parent="new.menu_root" sequence="1"/>
     <menuitem name="Purchase" id="new.menu_purchase_root" parent="new.menu_root" sequence="2"/>
    	<menuitem name="Office" id="new.menu_office" parent="new.menu_root" action="rasidat_action_window" sequence="3"/>
-    <menuitem name="Stock" id="new.menu_7" parent="new.menu_root" action="stock_action_window" sequence="4"/>
+    
 
     <!-- submenus -->
     <menuitem name="Sale" id="new.menu_sale" parent="new.menu_sale_root" action="sale_action_window" sequence="1"/>
@@ -163,5 +164,6 @@
     <menuitem name="Rasidat" id="new.menu_office_1" parent="new.menu_office" action="rasidat_action_window"/>
     <menuitem name="Takes" id="new.menu_office_2" parent="new.menu_office" action="take_action_window"/>
     <menuitem name="Costumer Rasidat" id="new.menu_sale_3" parent="new.menu_sale_root" action="crasidat_action_window" sequence="3"/>
+    
   </data>
 </odoo>

@@ -25,7 +25,13 @@ class Sale(models.Model):
          ('approved', 'Approved'),
         ], 'Status', default='draft', readonly=True,
         help='Choose whether the investment is still approved or not')
+    
+    
+    def action_draft(self):
+        self.write({'state':'draft'})
 
+    def action_approved(self):
+        self.write({'state': 'approved'})
  
 
     def action_approved(self):
@@ -52,13 +58,12 @@ class Sale(models.Model):
         self.env['atlas.sale'].costumer_calculations(self.costumer_id)
     product_id=fields.Many2one("atlas.product")
  
-    @api.constrains('amount')
+    @api.constrains('line_ids')
     def check_quantity_onhand(self):
         for rec in self:
             product_obj = self.env['atlas.product'].search([('id', '=', rec.product_id.id)])
-            current_quantity_onhand = product_obj.quantity_onhand
-            if product_obj.quantity_onhand < self.amount:
-                    raise UserError('Not enough quantity of product!')
+            if product_obj.quantity_onhand < self.line_ids.quantity:
+                    raise ValidationError('Not enough quantity of product!')
 
     
     @api.constrains('amount')
@@ -66,7 +71,7 @@ class Sale(models.Model):
         for rec in self:
             self.costumer_calculations(self.costumer_id) 
     
-
+    
     def costumer_calculations(self, costumer_id=False):
         domain = [('costumer_id', '=', costumer_id.id)]
         total_sales = 0

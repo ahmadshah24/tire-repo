@@ -35,7 +35,12 @@ class Purchase(models.Model):
          ('approved', 'Approved'),
         ], 'Status', default='draft', readonly=True,
         help='Choose whether the investment is still approved or not')
- 
+    
+    def action_draft(self):
+        self.write({'state':'draft'})
+
+    def action_approved(self):
+        self.write({'state': 'approved'})
 
     def action_approved(self):
         for line in self.line_ids:
@@ -62,5 +67,8 @@ class PurchaseLine(models.Model):
     def _total_amount(self):
             for line in self:
                 line.total = line.quantity * line.price
+
+    
+ 
 
     
