@@ -20,6 +20,7 @@
                         <table class="table table-condensed" border="1" style="border: 1px solid black; width:80%; text-align:center;">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>Name</th>
                                     <th>Type</th>
                                     <th>Size</th>
@@ -30,6 +31,7 @@
                             </thead>
                             <tbody>
                                 <tr t-foreach="docs" t-as="o">
+                                    <td><t t-esc="o.no"/></td>
                                     <td><t t-esc="o.name"/></td>
                                     <td><span t-field="o.type"/></td>
                                     <td><t t-esc="o.size"/></td>

@@ -8,6 +8,7 @@ class Sale(models.Model):
     _name = 'atlas.sale'
     _description = 'new tire '
 
+    no =fields.Char("No")
     name=fields.Char()
     billNo = fields.Char("Bill No")
     date = fields.Date("Date")
@@ -56,14 +57,10 @@ class Sale(models.Model):
     @api.constrains('amount')
     def calculate_costumer_sale(self):
         self.env['atlas.sale'].costumer_calculations(self.costumer_id)
-    product_id=fields.Many2one("atlas.product")
  
-    @api.constrains('line_ids')
-    def check_quantity_onhand(self):
-        for rec in self:
-            product_obj = self.env['atlas.product'].search([('id', '=', rec.product_id.id)])
-            if product_obj.quantity_onhand < self.line_ids.quantity:
-                    raise ValidationError('Not enough quantity of product!')
+
+
+    product_id=fields.Many2one("atlas.product")
 
     
     @api.constrains('amount')
@@ -115,4 +112,11 @@ class SaleLine(models.Model):
             rec.update({
                 'total': rec.quantity*rec.price,
             })
+
+    @api.constrains('quantity', 'product_id')
+    def check_available_quantity(self):
+        for line in self:
+            product = line.product_id
+            if product.quantity_onhand < line.quantity:
+                raise ValidationError('Not enough quantity of product  to sale !')
  

@@ -7,7 +7,7 @@ class CostumerInfo(models.Model):
 
 
 
-    
+    no =fields.Char("No")
     name=fields.Char("Name")
     phone = fields.Char("Phone")
     address = fields.Char("Address")

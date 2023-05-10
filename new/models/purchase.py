@@ -8,7 +8,7 @@ class Purchase(models.Model):
     _description = 'new tire purchase'
     _rec_name="invoice"
 
-
+    no =fields.Char("No")
     invoice = fields.Char("Invoic No")
     date = fields.Date("Date")
     amount=fields.Float("Amount")

@@ -1,25 +1,55 @@
 <odoo>
-    <template id="monthly_expense_report">
-        <t t-call="web.html_container">
-            <t t-foreach="data">
-                <div class="page">
-                    <h1>This is my first report</h1>
-                    <!-- <p><span t-esc="data.date"/></p> -->
-                </div>
-            </t>
+ <odoo>
+   
+    <template id="atlas_genral_report">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+            <div class="page">
+                <h1>Atlas General Report</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Bill No</th>
+                            <th>Customer Name</th>
+                            <th>Customer Phone</th>
+                            <th>Reminder</th>
+                            <th>Product Name</th>
+                            <th>Product Type</th>
+                            <th>Product Size</th>
+                            <th>Product Quantity Onhand</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="doc.return_records" t-as="record">
+                            <tr>
+                                <td><t t-esc="record.billNo"/></td>
+                                <td><t t-esc="record.customer_name"/></td>
+                                <td><t t-esc="record.customer_phone"/></td>
+                                <td><t t-esc="record.reminder"/></td>
+                                <td><t t-esc="record.product_name"/></td>
+                                <td><t t-esc="record.product_type"/></td>
+                                <td><t t-esc="record.product_size"/></td>
+                                <td><t t-esc="record.product_quantity_onhand"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
         </t>
-    </template>
-    <odoo>
-    <record model="ir.actions.report" id="action_atlas_genral_report">
+    </t>
+</template>
+ <record model="ir.actions.report" id="action_atlas_genral_report">
         <field name="name">Atlas Genral Report</field>
         <field name="model">atlas.genral.report.wizard</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">new.atlas_genral_report</field>
-        <field name="report_file">new.atlas_genral_report</field>
+        <field name="report_file">atlas_genral_report</field>
         <field name="print_report_name">'Altas Genral Report'</field>
         <field name="binding_model_id" ref="model_atlas_genral_report_wizard"></field>
         <field name="binding_type">report</field>
     </record>
+    
+   
 </odoo>
 </odoo>
   

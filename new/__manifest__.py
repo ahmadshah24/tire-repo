@@ -35,8 +35,8 @@
         'views/purchase_views.xml',
         'views/vender_views.xml',
         'wizard/atlas_genral_report_wizard.xml',
-        'reports/report.xml',
         'reports/atlas_genral_report.xml',
+        'reports/report.xml',
         'reports/sale_monthly_report.xml',
         'reports/purchase_monthly_report.xml',
         'reports/costumer_monthly_report.xml',
@@ -48,9 +48,9 @@
         'reports/rasidat_monthly_report.xml',
         
     ],
-    'report.xmlid': [
-        'new.atlas_genral_report',
-    ],
+    # 'report.xmlid': [
+    #     'new.atlas_genral_report',
+    # ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',

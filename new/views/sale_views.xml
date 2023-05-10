@@ -7,7 +7,7 @@
       <field name="model">atlas.sale</field>
       <field name="arch" type="xml">
         <tree>
-          <!-- <field name="no"/> -->
+          <field name="no"/>
           <field name="billNo"/>
           <field name="costumer_id"/>
           <field name="date"/>
@@ -33,7 +33,7 @@
           <sheet>
             <group>
                 <group>
-                    <!-- <field name="no"/> -->
+                    <field name="no"/>
                     <field name="billNo" required="1" attrs="{'readonly': [('state', '=', 'approved')]}"/>
                     <field name="costumer_id" required="1" attrs="{'readonly': [('state', '=', 'approved')]}"/>
                      <field name="active"/>

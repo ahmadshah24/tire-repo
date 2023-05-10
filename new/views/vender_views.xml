@@ -7,6 +7,7 @@
       <field name="model">vender.vender</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="no"/>
           <field name="name"/>
           <field name="address"/>
           <field name="phone"/>
@@ -26,6 +27,7 @@
           <sheet>
             <group>
                 <group>
+                    <field name="no"/>
                     <field name="name" required="1"/>
                     <field name="address"/>
                     <field name="phone"/>
