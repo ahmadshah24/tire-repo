@@ -14,9 +14,9 @@ class CostumerInfo(models.Model):
     active = fields.Boolean('Active', default=True)
     des = fields.Text("Description")
     reminder = fields.Float("Reminder" ,compute='_reminder', store=True)
-    returns = fields.Float("Return")
-    sale = fields.Float("Sale")
-    rasid=fields.Float("Rasidat")
+    returns = fields.Float("Return" ,readonly="1")
+    sale = fields.Float("Sale", readonly="1")
+    rasid=fields.Float("Rasidat", readonly="1")
 
 
 

@@ -1,23 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-
-    <record model="ir.ui.view" id="rasidat_list">
-      <field name="name">rasidat.list</field>
-      <field name="model">rasidat.rasidat</field>
+    <record model="ir.ui.view" id="pharmacy_medicine_type.list">
+      <field name="name">pharmacy medicine type list</field>
+      <field name="model">pharmacy.medicine.type</field>
       <field name="arch" type="xml">
         <tree>
           <field name="no"/>
-          <field name="costumer_id"/>
           <field name="date"/>
           <field name="amount" sum="a"/>
           <field name="check"/>
           <field name="to"/>
           <field name="through"/>
-           <field name="active"/>
+          <field name="active"/>
         </tree>
       </field>
     </record>
+  
 
 <!-- form _________________________________ -->
 
