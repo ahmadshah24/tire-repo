@@ -27,6 +27,11 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
+                <div class="oe_button_box" name="button_box">
+                    <button class="oe_stat_button" name="action_show_sales" icon="fa-bed" type="object">
+                        <field string="sales" name="sale_count" widget="statinfo"/>
+                    </button>
+                </div>
             <group>
                 <group>
                     <field name="no"/>

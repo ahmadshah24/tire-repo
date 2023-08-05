@@ -31,7 +31,7 @@
 
 
     <menuitem name="Reports" id="atlas_genral_reports_menu" parent="new.menu_root" sequence="4" />  
-    <menuitem name="Atlas Genral Report" id="atlas_genral_report_menu_1" parent="atlas_genral_reports_menu"
+    <menuitem name="Atlas Genral Report" id="atlas_genral_report_menu_1_1" parent="atlas_genral_reports_menu"
         action="atlas_genral_report_wizard_action_window" />  
 
 

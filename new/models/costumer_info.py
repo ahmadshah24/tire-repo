@@ -17,6 +17,31 @@ class CostumerInfo(models.Model):
     returns = fields.Float("Return" ,readonly="1")
     sale = fields.Float("Sale", readonly="1")
     rasid=fields.Float("Rasidat", readonly="1")
+    sales_ids = fields.One2many('atlas.sale', 'costumer_id')
+    sale_count = fields.Integer(string='Number of Sales', compute='_compute_sale_count', related='sales_ids.id', store=False)
+
+    @api.depends('sales_ids')
+    def _compute_sale_count(self):
+        for customer in self:
+            customer.sale_count = len(customer.sales_ids)
+
+    def action_show_sales(self):
+        for rec in self:
+            return {
+                'name': 'Sales to this customer',
+                'type': 'ir.actions.act_window',
+                'view_mode': 'tree,form',
+                'res_model': 'atlas.sale',
+                'domain': [('id', 'in', rec.sales_ids.ids)],
+                'context': {
+                'default_costumer_id': rec.sales_ids.id,
+                },
+            }
+
+
+
+
+
 
 
 

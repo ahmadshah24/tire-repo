@@ -3,7 +3,7 @@ from odoo import models, fields, api
 
 class Rasidat(models.Model):
     _name = 'rasidat.rasidat'
-    _description = 'new tire rasidat '
+    _description = 'new tire rasidat'
     _rec_name ='costumer_id'
 
     no = fields.Char("NO ")

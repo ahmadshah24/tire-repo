@@ -26,9 +26,9 @@
     'data': [
         'security/ir.model.access.csv',
         'views/sale_views.xml',
+        'views/costumer_rasidat_views.xml',
         'views/return_views.xml',
         'views/rasidat_views.xml',
-        'views/costumer_rasidat_views.xml',
         'views/take_views.xml',
         'views/costumer_info_views.xml',
         'views/product_views.xml',

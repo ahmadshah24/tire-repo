@@ -39,15 +39,16 @@ class Purchase(models.Model):
     def action_draft(self):
         self.write({'state':'draft'})
 
-    def action_approved(self):
-        self.write({'state': 'approved'})
+    # def action_approved(self):
+    #     self.write({'state': 'approved'})
 
     def action_approved(self):
         for line in self.line_ids:
             current_onhand = line.product_id.quantity_onhand
-
             line.product_id.write({'quantity_onhand': current_onhand+line.quantity})
         self.write({'state': 'approved'})
+
+
 
 class PurchaseLine(models.Model):
     _name = 'atlas.purchase.line'

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-    <record model="ir.ui.view" id="pharmacy_medicine_type.list">
-      <field name="name">pharmacy medicine type list</field>
-      <field name="model">pharmacy.medicine.type</field>
+
+    <record model="ir.ui.view" id="rasidat_list">
+      <field name="name">rasidat.list</field>
+      <field name="model">rasidat.rasidat</field>
       <field name="arch" type="xml">
         <tree>
           <field name="no"/>
@@ -16,46 +16,35 @@
         </tree>
       </field>
     </record>
-  
-
-<!-- form _________________________________ -->
-
-    <record model="ir.ui.view" id="rasidat_form">
-      <field name="name">rasidat.form</field>
+  <record model="ir.ui.view" id="rasidat_form_view">
+      <field name="name">rasidat form view</field>
       <field name="model">rasidat.rasidat</field>
       <field name="arch" type="xml">
         <form>
           <sheet>
             <group>
-                <group>
-                    <field name="no"/>
-                    <field name="costumer_id" required="1"/>
-                    <field name="date"/>
-                    <field name="through"/>
+              <group>        
+                  <field name="no"/>
+                  <field name="costumer_id"/>
+                  <field name="date"/>
+                  <field name="through"/>
                 </group>
                 <group>
-                    <field name="check" required="1"/>
-                    <field name="amount" required="1"/>
-                    <field name="to" required="1"/>
-                     <field name="active"/>
-                </group>
+                  <field name="amount"/>
+                  <field name="check"/>
+                  <field name="to"/>
+                  <field name="active"/>
+              </group>
             </group>
-              <group>
+            <group>
                      <field name="des"/>
               </group>
-        </sheet>
+            </sheet>
         </form>
       </field>
     </record>
 
 
-    <!-- actions opening views on models -->
-
-    <record model="ir.actions.act_window" id="rasidat_action_window">
-      <field name="name">Sobek Rasidat TO Office</field>
-      <field name="res_model">rasidat.rasidat</field>
-      <field name="view_mode">tree,form</field>
-    </record>
 
   </data>
 </odoo>
