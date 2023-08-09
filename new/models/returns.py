@@ -45,3 +45,14 @@ class Return(models.Model):
                 'total': rec.quantity*rec.price,
 
             })
+
+
+    def unlink(self):
+        for record in self:
+            costumer_id = record.costumer_id
+            if costumer_id:
+                costumer_id.returns -= record.total  # Subtract only the amount of the deleted return
+        return super(Return, self).unlink()
+    
+
+    

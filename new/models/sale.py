@@ -78,18 +78,21 @@ class Sale(models.Model):
         rasid_ids = self.env['crasidat.crasidat'].search(domain)
         return_ids = self.env['return.return'].search(domain)
         for sale_rec in sale_ids:
-            total_sales += (sale_rec.amount)     
+            total_sales += sale_rec.amount     
         for rasid_rec in rasid_ids:
             total_rasids += rasid_rec.amount
         for return_rec in return_ids:
             total_returns += return_rec.total
         
-
+        if total_returns > total_sales:
+            raise ValidationError("Total Return amount cannot exceed Total Sale amount.")
+        
         costumer_id.update({
-            'sale':total_sales,
-            'rasid':total_rasids,
-            'returns':total_returns,
+            'sale': total_sales,
+            'rasid': total_rasids,
+            'returns': total_returns,
         })
+
     
 class SaleLine(models.Model):
 

@@ -14,7 +14,7 @@ class Purchase(models.Model):
     amount=fields.Float("Amount")
     active = fields.Boolean('Active', default=True)
     des = fields.Text("Description")
-   
+    product_id=fields.Many2one("atlas.product")
 
     vender_id = fields.Many2one("vender.vender")
     line_ids=fields.One2many("atlas.purchase.line","purchase_id")
