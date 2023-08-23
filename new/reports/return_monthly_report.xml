@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <!-- Report template -->
         <template id="return_monthly_report">
-    <t t-call="web.html_container">
-        <!-- <t t-as="o"> -->
+    <t t-call="web.basic_layout">
+        <t t-foreach="docs" t-as="o">
             <div class="page">
-                <div class="header">
-                    <div class="company-info">
-                        <div class="company-name">[Atlas Tire]</div>
-                        <div class="company-address">[Haroon Market Shar-e naw ,Kabul, Afghanistan]</div>
-                        <div class="company-phone">[+93 (0) 787293329]</div>
-                    </div>
+                <div class="body">
+                    <div class="">
+                    <div class="company-name" style="font-weight:bold;">[Atlas Tire]</div>
+                    <div class="company-address" style="font-weight:bold;">[Haroon Market Shar-e naw ,Kabul, Afghanistan]</div>
+                    <div class="company-phone" style="font-weight:bold;"> [+93 (0) 787293329]</div>
                 </div>
                 <center>
-                    <h1>Atlas Returns report</h1>
-                    <table class="table table-condensed" border="1" style="border: 1px solid black; width:80%; text-align:center;">
+                    <h1 style="margin-bottom:50px; margin-top:50px; font-weight:bold;">Atlas Returns report</h1>
+                    <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>No</th>
@@ -29,7 +27,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr t-foreach="docs" t-as="o">
+                            <tr>
                                 <td><t t-esc="o.no"/></td>
                                 <td><t t-esc="o.billNo"/></td>
                                 <td><span t-field="o.costumer_id.name"/></td>
@@ -43,11 +41,8 @@
                     </table>
                 </center>
             </div>
-            <div class="footer">
-                <div class="address">Between Haji Yaqab Square and Ansari Squar Haroon Market ,Kabul ,Afghanistan</div>
-                <div class="phone">+93(0)787293329</div>
             </div>
-        <!-- </t> -->
+        </t>
     </t>
 </template>
 

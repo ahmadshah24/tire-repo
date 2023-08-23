@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <!-- Report template -->
         <template id="purchase_monthly_report">
-    <t t-call="web.html_container">
-        <div class="page">
-            <div class="header">
-                <div class="company-info">
-                    <div class="company-name">[Atlas Tire]</div>
-                    <div class="company-address">[Haroon Market Shar-e naw ,Kabul, Afghanistan]</div>
-                    <div class="company-phone">[+93 (0) 787293329]</div>
+    <t t-call="web.basic_layout">
+        <t t-foreach="docs" t-as="o">
+        <div class="page" style="page-break-after: always;">
+            <div class="body">
+                <div class="">
+                    <div class="company-name" style="font-weight:bold;">[Atlas Tire]</div>
+                    <div class="company-address" style="font-weight:bold;">[Haroon Market Shar-e naw ,Kabul, Afghanistan]</div>
+                    <div class="company-phone" style="font-weight:bold;"> [+93 (0) 787293329]</div>
                 </div>
-            </div>
             <center>
-                <h1>Atlas purchase report</h1>
-                <table class="table table-bordered table-striped">
+                <h1 style="margin-bottom:50px; margin-top:50px; font-weight:bold;">Atlas purchase report</h1>
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -28,7 +27,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <t t-foreach="docs" t-as="o">
                             <tr>
                                 <td><span t-field="o.no"/></td>
                                 <td><span t-field="o.invoice"/></td>
@@ -51,20 +49,17 @@
                                 </td>
                                 <td><t t-esc="o.amount"/></td>
                             </tr>
-                        </t>
                         <tr>
-                            <td colspan="7"></td>
+                            <td colspan="6"></td>
                             <td><b>Total:</b></td>
                             <td><b><t t-esc="sum(doc.amount for doc in docs)"/></b></td>
                         </tr>
                     </tbody>
                 </table>
             </center>
-        <div class="footer">
-            <div class="address">123 Main St., Anytown, USA</div>
-            <div class="phone">123-456-7890</div>
         </div>
         </div>
+        </t>
     </t>
 </template>
 

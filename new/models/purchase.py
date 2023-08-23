@@ -18,7 +18,7 @@ class Purchase(models.Model):
 
     vender_id = fields.Many2one("vender.vender")
     line_ids=fields.One2many("atlas.purchase.line","purchase_id")
-
+    sales_id = fields.Many2one('atlas.sale')
     @api.constrains('line_ids')
     def _total_bill(self):
         if any(self.line_ids):

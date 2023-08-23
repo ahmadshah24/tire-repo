@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <!-- Report template -->
         <template id="costumer_rasidat_monthly_report">
-            <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
                 <t t-foreach="docs" t-as="o">
                     <div class="page">
-                        <div class="header">
-                            <div class="company-info">
-                                <div class="company-name">[Atlas Tire]</div>
-                                <div class="company-address">[Haroon Market Shar-e naw ,Kabul, Afghanistan]</div>
-                                <div class="company-phone">[+93 (0) 787293329]</div>
+                        <div class="body">
+                            <div class="">
+                                <div class="company-name" style="font-weight:bold;">[Atlas Tire]</div>
+                                <div class="company-address" style="font-weight:bold;">[Haroon Market Shar-e naw ,Kabul, Afghanistan]</div>
+                                <div class="company-phone" style="font-weight:bold;"> [+93 (0) 787293329]</div>
                             </div>
-                            
-                        </div>
                         <center>
-                            <h1>Atlas costumer report</h1>
+                            <h1 style="margin-bottom:50px; margin-top:50px; font-weight:bold;">Atlas costumer report</h1>
                         
-                        <table class="table table-condensed" border="1" style="border: 1px solid black; width:80%; text-align:center;">
+                        <table class="table table-bordered" >
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -41,9 +38,6 @@
                         </table>
                         </center>
                     </div>
-                    <div class="footer">
-                            <div class="address">123 Main St., Anytown, USA</div>
-                            <div class="phone">123-456-7890</div>
                     </div>
                 </t>
             </t>
